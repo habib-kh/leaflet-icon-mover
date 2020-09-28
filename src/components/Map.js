@@ -30,14 +30,9 @@ class Map extends React.Component {
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
         />
         <Control position="topleft" >
-        <button variant="primary"
-          onClick={ () => this.setState({bounds: [51.3, 0.7]}) }
-        >
-انتخاب مبدا        </button>
-<button variant="primary"
-          onClick={ () => this.setState({bounds: [51.3, 0.7]}) }
-        >
-انتخاب مقصد        </button>
+          <div style={{margin:'10px'}}>
+        <button type="button" class="btn btn-dark">Primary</button></div>
+        <div style={{margin:'10px'}}><button type="button" class="btn btn-dark">Primary</button></div>
       </Control>
         <Marker  
           draggable = {true}
