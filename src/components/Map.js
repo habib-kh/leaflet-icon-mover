@@ -1,5 +1,8 @@
 import React from 'react'
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
+import { planeIcon } from './planeIcon';
+import  Control from 'react-leaflet-control';
+import Button from 'react-bootstrap/Button';
 
 class Map extends React.Component {
   constructor() {
@@ -26,7 +29,20 @@ class Map extends React.Component {
         <TileLayer
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
         />
-        <Marker  draggable = {true} position={[35, 51]}>
+        <Control position="topleft" >
+        <button variant="primary"
+          onClick={ () => this.setState({bounds: [51.3, 0.7]}) }
+        >
+انتخاب مبدا        </button>
+<button variant="primary"
+          onClick={ () => this.setState({bounds: [51.3, 0.7]}) }
+        >
+انتخاب مقصد        </button>
+      </Control>
+        <Marker  
+          draggable = {true}
+          position={[35, 51]}
+          icon= {planeIcon}>
           <Popup>
             Popup for any custom information.
           </Popup>
