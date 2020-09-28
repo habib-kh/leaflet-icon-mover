@@ -2,12 +2,19 @@ import React from 'react'
 import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
 
 class Map extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      markers:[],
+    }
+  }
+
   render() {
     return (
       <LeafletMap
         center={[35, 51]}
         zoom={5}
-        maxZoom={10}
+        maxZoom={15}
         attributionControl={true}
         zoomControl={true}
         doubleClickZoom={true}
@@ -19,7 +26,7 @@ class Map extends React.Component {
         <TileLayer
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
         />
-        <Marker position={[50, 10]}>
+        <Marker  draggable = {true} position={[35, 51]}>
           <Popup>
             Popup for any custom information.
           </Popup>
